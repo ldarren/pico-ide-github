@@ -1,0 +1,14 @@
+[
+	["Playground", "view", [
+		["options", "map", {"el": ".__"}],
+		["css", "file", "Playground.css"],
+		["repos", "models", []],
+		["github", "ctrl", [
+			["repos", "ref", "repos"]
+		]],
+		["Recreation", "view", [
+			["options", "map", {"className": "recreation", "draggable": "false"}],
+			["html", "file", "Recreation.html"]
+		]]
+	]]
+]

@@ -1,0 +1,23 @@
+{
+  "name": "pico-ide",
+  "version": "0.1.0",
+  "description": "pico ide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pico",
+    "ide"
+  ],
+  "author": "Darren Liew",
+  "license": "MIT",
+  "dependencies": {
+    "clean-css": "^4.1.9",
+    "lean-wrap": "^0.2.23",
+    "pico-args": "^1.0.9",
+    "pico-client": "^0.3.20",
+    "pico-common": "^0.8.7",
+    "pojs": "^0.4.11"
+  }
+}
