@@ -59,14 +59,9 @@ html, body{
 	cursor: nesw-resize;
 }
 .recreation .row.middle .col.center{
+	display:flex;
+	flex-direction:column;
 	cursor: move;
-}
-.recreation button{
-	top: 10px;
-	right: 10px;
-	width: 100px;
-	height: 20px;
-	background: blue;
 }
 .clickable{
 	cursor: pointer;

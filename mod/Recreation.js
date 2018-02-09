@@ -102,6 +102,9 @@ return {
 		style.top = (xy[1] - size[1]/2) + 'px'
 		style.width = size[0]+'px'
 		style.height = size[1]+'px'
+
+		this.setElement(this.el.querySelector('.row.middle .col.center'))
+		this.spawnBySpec(this.spec, params)
 	},
 	events: {
 		'touchstart': function(evt, col){
@@ -113,7 +116,7 @@ return {
 		},
 		'taps': function(evt, target){
 			this.fullscreen = !this.fullscreen
-			var style = this.el.style
+			var style = this._el.style
 			if (this.fullscreen) {
 				style.left = 0
 				style.top = 0
@@ -134,7 +137,7 @@ return {
 	slots: {
 		rub: function(from, sender, box){
 			if (!this.dragFunc) return
-			this.dragFunc(this.el, box, this.region)
+			this.dragFunc(this._el, box, this.region)
 		},
 		rubStop: function(from, sender){
 			this.dragFunc = null

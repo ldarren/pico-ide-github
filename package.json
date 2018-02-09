@@ -1,9 +1,10 @@
 {
   "name": "pico-ide",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "pico ide",
   "main": "index.js",
   "scripts": {
+  	"build": "npx pclient-build --proj ide",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

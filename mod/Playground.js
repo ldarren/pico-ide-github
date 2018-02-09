@@ -9,6 +9,7 @@ return {
 	},
 	events: {
 		'touchstart': function(evt, target){
+			if (!target.classList.contains('col')) return
 			var recreation = target.closest('.recreation')
 			if (!recreation) return
 			this.el.appendChild(recreation)

@@ -1,0 +1,15 @@
+.headerBar {
+	flex: 20px 0 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.headerBar select {
+	flex: 100% 1 1;
+	background: #fff;
+}
+
+.headerBar button {
+	flex: 20px 0 0;
+	background: blue;
+}
