@@ -1,5 +1,6 @@
 # Builds
 cfg/proj.json
+bin/
 
 # Logs
 logs
