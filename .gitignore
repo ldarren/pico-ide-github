@@ -1,3 +1,6 @@
+# Builds
+cfg/proj.json
+
 # Logs
 logs
 *.log
