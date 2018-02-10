@@ -1,4 +1,8 @@
 .project{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
 	background: cyan;
 	color: blue;
 	content: "Project";

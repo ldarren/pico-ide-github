@@ -1102,7 +1102,7 @@ View.prototype = {
 return View
 //# sourceURL=p/View
 })
-pico.define('cfg/proj.json','[["Playground","view",[["options","map",{"el":".__"}],["css","file","Playground.css"],["repos","models",[]],["Github","ctrl",[["repos","ref","repos"]]],["Recreation","view",[["options","map",{"className":"recreation","draggable":"false"}],["html","file","Recreation.html"],["HeaderBar","view",[["options","map",{"className":"headerBar"}],["html","file","HeaderBar.html"],["css","file","HeaderBar.css"]]],["Container","view",[["options","map",{"className":"container"}],["css","file","Container.css"],["Project","view",[["options","map",{"className":"project"}],["html","file","Project.html"],["css","file","Project.css"]]],["Explorer","view",[["options","map",{"className":"explorer"}],["html","file","Explorer.html"],["css","file","Explorer.css"]]],["Editor","view",[["options","map",{"className":"editor"}],["html","file","Editor.html"],["css","file","Editor.css"]]],["Preview","view",[["options","map",{"className":"preview"}],["html","file","Preview.html"],["css","file","Preview.css"]]]]]]]]]]')
+pico.define('cfg/proj.json','[["Playground","view",[["options","map",{"el":".__"}],["css","file","Playground.css"],["repos","models",[]],["repoMeta","models",[]],["tree","models",[]],["Github","ctrl",[["repos","ref","repos"]]],["Recreation","view",[["options","map",{"className":"recreation","draggable":"false"}],["html","file","Recreation.html"],["models","refs","models"],["HeaderBar","view",[["options","map",{"className":"headerBar"}],["html","file","HeaderBar.html"],["css","file","HeaderBar.css"]]],["Container","view",[["options","map",{"className":"container"}],["css","file","Container.css"],["models","refs","models"],["Project","view",[["options","map",{"className":"project"}],["html","file","Project.html"],["css","file","Project.css"],["repos","ref","repos"],["repoMeta","ref","repoMeta"],["ProjectInfo","view",[["options","map",{"className":"projectInfo"}],["html","file","ProjectInfo.html"],["css","file","ProjectInfo.css"]]],["ListView","View",[["options","map",{"tagName":"ul","className":"listView"}],["css","file","ListView.css"],["ListItem","View",[["options","map",{"tagName":"li","className":"listItem"}],["html","file","ListItem.html"],["css","file","ListItem.css"]]]]]]],["Explorer","view",[["options","map",{"className":"explorer"}],["html","file","Explorer.html"],["css","file","Explorer.css"]]],["Editor","view",[["options","map",{"className":"editor"}],["html","file","Editor.html"],["css","file","Editor.css"]]],["Preview","view",[["options","map",{"className":"preview"}],["html","file","Preview.html"],["css","file","Preview.css"]]]]]]]]]]')
 
 pico.run({
     name: 'main',
@@ -1126,11 +1126,13 @@ pico.run({
     var specMgr= require('p/specMgr')
     var View= require('p/View')
     var project = require('cfg/proj.json')
+	var view
 
     return function(){
 		specMgr.load(null, null, project, function(err, spec){
 			if (err) return console.error(err)
-			View.prototype.spawnBySpec(spec)
+			view = new View
+			view.spawnBySpec(spec)
 		})
     }
 })
