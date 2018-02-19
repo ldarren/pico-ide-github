@@ -1,0 +1,12 @@
+.projectinfo h2{
+	line height: 40px;
+	font-size: 20px;
+	text-align: center;
+	color: #ddd;
+}
+.projectinfo i{
+	line height: 12px;
+	font-size: 11px;
+	text-align: left;
+	color: #aaa;
+}

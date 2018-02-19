@@ -2,10 +2,10 @@ return {
 	signals: ['rub'],
 	deps: {
 		Recreation: 'view',
-		github: 'ctrl'
+		Github: 'ctrl'
 	},
 	create: function(deps, params){
-		this.spawn(this.deps.github)
+		this.spawn(this.deps.Github)
 	},
 	events: {
 		'touchstart': function(evt, target){

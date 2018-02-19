@@ -22,8 +22,7 @@
 				["css", "file", "Container.css"],
 				["models", "refs", "models"],
 				["Project", "view", [
-					["options", "map", {"className": "project"}],
-					["html", "file", "Project.html"],
+					["options", "map", {"className": "main"}],
 					["css", "file", "Project.css"],
 					["repos", "ref", "repos"],
 					["repoMeta", "ref", "repoMeta"],
@@ -44,18 +43,25 @@
 				]],
 				["Explorer", "view", [
 					["options", "map", {"className": "explorer"}],
-					["html", "file", "Explorer.html"],
-					["css", "file", "Explorer.css"]
+					["css", "file", "Explorer.css"],
+					["repos", "ref", "repos"]
 				]],
 				["Editor", "view", [
 					["options", "map", {"className": "editor"}],
-					["html", "file", "Editor.html"],
 					["css", "file", "Editor.css"]
 				]],
 				["Preview", "view", [
-					["options", "map", {"className": "preview"}],
-					["html", "file", "Preview.html"],
-					["css", "file", "Preview.css"]
+					["options", "map", {"className": "main"}],
+					["css", "file", "Preview.css"],
+					["IframeCtrl", "view", [
+						["options", "map", {"tagName":"ul", "className": "iframectrl"}],
+						["html", "file", "IframeCtrl.html"],
+						["css", "file", "IframeCtrl.css"]
+					]],
+					["IFrame", "View", [
+						["options", "map", {"tagName":"iframe", "className": "iframe"}],
+						["css", "file", "IFrame.css"]
+					]]
 				]]
 			]]
 		]]

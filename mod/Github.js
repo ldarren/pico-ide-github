@@ -77,7 +77,7 @@ function getContent(owner, repo, path, cb){
 }
 
 function getRaw(owner, repo, path, cb){
-	ajax('http://dev.biclicious.biz:8080/get/raw/repos/' + `${owner}/${repo}/${path}`, cb)
+	ajax('http://dev.biclicious.biz:8080/repos/get/raw/' + `${owner}/${repo}/${path}`, cb)
 }
 
 return {
@@ -94,20 +94,17 @@ return {
 				getRepositories(pObj.pluck(res.installations, 'id'), [], (err, res) => {
 					if (err) return console.error(err)
 					console.log('### repositories', res)
-					const [_, repos]  = res[0]
-					const repo = repos[0]
-					getRaw(repo.owner.login, repo.name, 'branches', (err, branches) => {
-						if (err) return console.error(err)
-						console.log('### branches', branches)
-						const branch = branches[0]
-						getRaw(repo.owner.login, repo.name, 'commits/' + branch.commit.sha, (err, commit) => {
-							if (err) return console.error(err)
-							console.log('### commit', commit)
-							const tree = commit.commit.tree.sha
-						})
+					let models = []
+					res.forEach(item => {
+						if (item[0]) return console.error(item[0])
+						models.push(...item[1])
 					})
+					deps.repos.load(models)
+					const [_, repos]  = res[0]
 				})
 			})
 		})
-	}
+	},
+	getRaw,
+	getContent
 }
