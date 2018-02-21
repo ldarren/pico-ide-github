@@ -23,46 +23,45 @@
 				["models", "refs", "models"],
 				["Project", "view", [
 					["options", "map", {"className": "main"}],
-					["css", "file", "Project.css"],
-					["repos", "ref", "repos"],
-					["repoMeta", "ref", "repoMeta"],
+					["models", "refs", "models"],
 					["ProjectInfo", "view", [
 						["options", "map", {"className": "projectInfo"}],
 						["html", "file", "ProjectInfo.html"],
-						["css", "file", "ProjectInfo.css"]
+						["css", "file", "ProjectInfo.css"],
+						["repoMeta", "ref", "repoMeta"]
 					]],
-					["ListView", "View", [
+					["ListView", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
-						["ListItem", "View", [
+						["repos", "ref", "repos"],
+						["repoMeta", "ref", "repoMeta"],
+						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
-							["html", "file", "ListItem.html"],
-							["css", "file", "ListItem.css"]
+							["tpl", "file", "ListItem.asp"],
+							["css", "file", "ListItem.css"],
+							["repo", "model", "repos", 0]
 						]]
 					]]
-				]],
+				], "p/View"],
 				["Explorer", "view", [
-					["options", "map", {"className": "explorer"}],
-					["css", "file", "Explorer.css"],
+					["options", "map", {"className": "main"}],
 					["repos", "ref", "repos"]
-				]],
+				],"p/View"],
 				["Editor", "view", [
-					["options", "map", {"className": "editor"}],
-					["css", "file", "Editor.css"]
-				]],
+					["options", "map", {"className": "main"}]
+				],"p/View"],
 				["Preview", "view", [
 					["options", "map", {"className": "main"}],
-					["css", "file", "Preview.css"],
 					["IframeCtrl", "view", [
 						["options", "map", {"tagName":"ul", "className": "iframectrl"}],
 						["html", "file", "IframeCtrl.html"],
 						["css", "file", "IframeCtrl.css"]
 					]],
-					["IFrame", "View", [
+					["IFrame", "view", [
 						["options", "map", {"tagName":"iframe", "className": "iframe"}],
 						["css", "file", "IFrame.css"]
 					]]
-				]]
+				], "p/View"]
 			]]
 		]]
 	]]

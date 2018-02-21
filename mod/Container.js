@@ -6,6 +6,7 @@ return {
 		Preview: 'view'
 	},
 	create: function(deps, params){
+		this.spawn(deps.Project)
 	},
 	slots:{
 		changeContent: function(from, sender, name){

@@ -87,7 +87,7 @@ var dragFunc = {
 return {
 	deps: {
 		center: ['list', [100, 100]],
-		size: ['list', [200, 100]]
+		size: ['list', [200, 300]]
 	},
 	create: function(deps, params){
 		var xy = deps.center
