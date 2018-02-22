@@ -44,23 +44,27 @@
 					]]
 				], "p/View"],
 				["Explorer", "view", [
-					["options", "map", {"className": "main"}],
-					["repos", "ref", "repos"]
-				],"p/View"],
-				["Editor", "view", [
-					["options", "map", {"className": "main"}]
-				],"p/View"],
+					["repos", "ref", "repos"],
+					["Shortcut", "view", [
+					]],
+					["TreeView", "view", [
+					]],
+					["TextEditor", "view", [
+						["options", "map", {"tagName":"textarea"}],
+						["fileurl", "text", ""]
+					]]
+				]],
 				["Preview", "view", [
 					["options", "map", {"className": "main"}],
-					["IframeCtrl", "view", [
+					["IFrameCtrl", "view", [
 						["options", "map", {"tagName":"ul", "className": "iframectrl"}],
-						["html", "file", "IframeCtrl.html"],
-						["css", "file", "IframeCtrl.css"]
+						["html", "file", "IFrameCtrl.html"],
+						["css", "file", "IFrameCtrl.css"]
 					]],
 					["IFrame", "view", [
-						["options", "map", {"tagName":"iframe", "className": "iframe"}],
+						["options", "map", {"tagName":"iframe", "className": "iframe", "src":"http://dev.biclicious.biz/ide/public/"}],
 						["css", "file", "IFrame.css"]
-					]]
+					], "p/View"]
 				], "p/View"]
 			]]
 		]]

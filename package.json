@@ -1,10 +1,10 @@
 {
   "name": "pico-ide",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "pico ide",
   "main": "index.js",
   "scripts": {
-  	"build": "npx pclient-build --proj ide",
+    "build": "npx pclient-build --proj ide",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "clean-css": "^4.1.9",
+    "codemirror": "^5.35.0",
     "lean-wrap": "^0.2.23",
     "pico-args": "^1.0.9",
     "pico-client": "^0.3.20",

@@ -2,7 +2,6 @@ return {
 	deps: {
 		Project: 'view',
 		Explorer: 'view',
-		Editor: 'view',
 		Preview: 'view'
 	},
 	create: function(deps, params){
