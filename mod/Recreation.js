@@ -44,6 +44,7 @@ var dragFunc = {
 		style.left = el.offsetLeft - d + 'px'
 		style.width = el.offsetWidth + d + 'px'
 	},
+	// TODO: change window move to header
 	middlecenter: function(el, box, region){
 		var style = el.style
 

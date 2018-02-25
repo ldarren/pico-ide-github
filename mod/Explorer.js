@@ -5,12 +5,17 @@ return {
 		TextEditor: 'view'
 	},
 	create: function(deps, params){
-		this.spawn(deps.TextEditor)
+		this.spawn(deps.Shortcut)
 	},
 	slots: {
-		'go': function(from, sender){
+		'browse': function(from, sender){
+			this.spawn(this.deps.TreeView)
+		},
+		'edit': function(from, sender, url){
+			this.spawn(this.deps.TextEditor)
 		},
 		'close': function(from, sender){
+			this.spawn(this.deps.Shortcut)
 		}
 	}
 }

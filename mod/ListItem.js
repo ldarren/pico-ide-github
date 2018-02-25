@@ -1,9 +1,9 @@
 return {
 	deps:{
-		repo: 'model',
+		model: 'model',
 		tpl: 'file'
 	},
 	create(deps, params){
-		this.el.innerHTML=deps.tpl(deps.repo)
+		this.el.innerHTML=deps.tpl(deps.model)
 	}
 }

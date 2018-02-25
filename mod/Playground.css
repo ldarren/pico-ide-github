@@ -61,7 +61,6 @@ html, body{
 .recreation .row.middle .col.center{
 	display:flex;
 	flex-direction:column;
-	cursor: move;
 }
 .clickable{
 	cursor: pointer;

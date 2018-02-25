@@ -5,6 +5,7 @@
 		["repos", "models", []],
 		["repoMeta", "models", []],
 		["tree", "models", []],
+		["history", "models", []],
 		["Github", "ctrl", [
 			["repos", "ref", "repos"]
 		]],
@@ -33,20 +34,37 @@
 					["ListView", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
-						["repos", "ref", "repos"],
+						["models", "ref", "repos"],
 						["repoMeta", "ref", "repoMeta"],
 						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
 							["tpl", "file", "ListItem.asp"],
-							["css", "file", "ListItem.css"],
-							["repo", "model", "repos", 0]
+							["model", "model", "models", 0]
 						]]
 					]]
 				], "p/View"],
 				["Explorer", "view", [
+					["options", "map", {"className": "main"}],
 					["repos", "ref", "repos"],
+					["history", "ref", "history"],
 					["Shortcut", "view", [
-					]],
+						["options", "map", {"tagName":"ul", "className": "listView"}],
+						["css", "file", "ListView.css"],
+						["predefined" ,"list", [
+							{"tagName":"li", "className": "listItem", "content":[
+								{"tagName":"a", "content":"Browser..."}
+							]},
+							{"tagName":"li", "className": "listItem", "content":[
+								{"tagName":"a", "content":"Create..."}
+							]}
+						]],
+						["models", "ref", "history"],
+						["ListItem", "view", [
+							["options", "map", {"tagName":"li", "className": "listItem"}],
+							["tpl", "file", "ListItem.asp"],
+							["model", "model", "models", 0]
+						]]
+					], ["ListView", "Shortcut"]],
 					["TreeView", "view", [
 					]],
 					["TextEditor", "view", [
