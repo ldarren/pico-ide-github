@@ -20,4 +20,5 @@ return {
 			
 			this.spawn(Mod)
 		}
-	}}
+	}
+}

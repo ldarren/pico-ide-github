@@ -1,17 +1,24 @@
 return {
-	signals: ['browse'],
+	signals: ['browse','create'],
 	deps: {
 		predefined: 'list'
 	},
-	create: function(deps, params){
+	create: function callee(deps, params){
 		deps.predefined.forEach(opt => {
 			this.el.appendChild(__.dom.get(opt))
 		})
-		this.create.prototype.call(this, deps, params)
+		callee.prototype.call(this, deps, params)
 	},
 	events: {
 		'click .listItem': function(evt, target){
-			this.signals.browse().send(this.host)
+			switch(target.querySelector('a').name){
+			case 'browse':
+				this.signals.browse('/').send(this.host)
+				break
+			case 'create':
+				this.signals.create().send(this.host)
+				break
+			}
 		}
 	}
 }

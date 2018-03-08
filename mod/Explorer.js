@@ -8,13 +8,16 @@ return {
 		this.spawn(deps.Shortcut)
 	},
 	slots: {
-		'browse': function(from, sender){
-			this.spawn(this.deps.TreeView)
+		'browse': function(from, sender, path){
+			this.clear()
+			this.spawn(this.deps.TreeView, ['/'])
 		},
 		'edit': function(from, sender, url){
+			this.clear()
 			this.spawn(this.deps.TextEditor)
 		},
 		'close': function(from, sender){
+			this.clear()
 			this.spawn(this.deps.Shortcut)
 		}
 	}

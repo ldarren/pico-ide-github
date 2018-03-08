@@ -45,17 +45,17 @@
 				], "p/View"],
 				["Explorer", "view", [
 					["options", "map", {"className": "main"}],
-					["repos", "ref", "repos"],
+					["tree", "ref", "tree"],
 					["history", "ref", "history"],
 					["Shortcut", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
 						["predefined" ,"list", [
 							{"tagName":"li", "className": "listItem", "content":[
-								{"tagName":"a", "content":"Browser..."}
+								{"tagName":"a", "name": "browse", "content":"Browser..."}
 							]},
 							{"tagName":"li", "className": "listItem", "content":[
-								{"tagName":"a", "content":"Create..."}
+								{"tagName":"a", "name": "create", "content":"Create..."}
 							]}
 						]],
 						["models", "ref", "history"],
@@ -66,7 +66,15 @@
 						]]
 					], ["ListView", "Shortcut"]],
 					["TreeView", "view", [
-					]],
+						["options", "map", {"tagName":"ul", "className": "listView"}],
+						["css", "file", "ListView.css"],
+						["models", "ref", "tree"],
+						["ListItem", "view", [
+							["options", "map", {"tagName":"li", "className": "listItem"}],
+							["tpl", "file", "ListItem.asp"],
+							["model", "model", "models", 0]
+						]]
+					], ["ListView", "TreeView"]],
 					["TextEditor", "view", [
 						["options", "map", {"tagName":"textarea"}],
 						["fileurl", "text", ""]
