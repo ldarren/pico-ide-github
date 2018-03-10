@@ -68,16 +68,19 @@ function getRepositories(installationIds, repositories, cb){
 	})
 }
 
-function getContent(owner, repo, path, cb){
-	ajax('GET', domain + `repos/${owner}/${repo}/contents/${path}`, oauth, {
+function getContent(repoId, path, cb){
+	debugger
+	var repo = this.deps.repos.get(repoId)
+	ajax('GET', domain + `repos/${repo.owner}/${repo.name}/contents/${path}`, oauth, {
 		headers:{
 			Accept: 'application/vnd.github.VERSION.raw'
 		}
 	}, cb)
 }
 
-function getRaw(owner, repo, path, cb){
-	ajax('http://dev.biclicious.biz:8080/repos/get/raw/' + `${owner}/${repo}/${path}`, cb)
+function getRaw(repoId, path, cb){
+	var repo = this.deps.repos.get(repoId)
+	ajax('http://dev.biclicious.biz:8080/repos/get/raw/' + `${repo.owner}/${repo.name}/${path}`, cb)
 }
 
 return {

@@ -1,16 +1,19 @@
-const Gihub = require('Github')
-
 return {
 	deps: {
-		repoMeta: 'models'	
-		tree: 'models'	
+		Github: 'view',
+		repoMeta: 'models',
+		tree: 'models'
 	},
 	create: function callee(deps, params){
-		var path = params[0]
-		var list = deps.tree.get(path)
-		var mainRepo = deps.repoMeta.index(0)
+		deps.repoMeta.list(function(err, models){
+			if (err) return console.error(err)
+			if (!models.length) return __.alert('Please select a repo')
+			var path = params[0]
+			deps.Github.getContent(models[0].id, path, function(){
+				console.log(arguments)
+			})
+		})
 
-		Github.getContent(mainRepo, path, function()
 		callee.prototype.call(this, deps, params)
 	}
 }

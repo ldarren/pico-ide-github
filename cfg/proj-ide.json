@@ -13,6 +13,7 @@
 			["options", "map", {"className": "recreation", "draggable": "false"}],
 			["html", "file", "Recreation.html"],
 			["models", "refs", "models"],
+			["Github", "ref", "Github"],
 			["HeaderBar", "view", [
 				["options", "map", {"className": "headerBar"}],
 				["html", "file", "HeaderBar.html"],
@@ -22,6 +23,7 @@
 				["options", "map", {"className": "container"}],
 				["css", "file", "Container.css"],
 				["models", "refs", "models"],
+				["Github", "ref", "Github"],
 				["Project", "view", [
 					["options", "map", {"className": "main"}],
 					["models", "refs", "models"],
@@ -39,14 +41,15 @@
 						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
 							["tpl", "file", "ListItem.asp"],
-							["model", "model", "models", 0]
-						]]
+							["model", "model", "models", 0],
+							["repoMeta", "ref", "repoMeta"]
+						], ["ListItem", "AddRepoMeta"]]
 					]]
 				], "p/View"],
 				["Explorer", "view", [
 					["options", "map", {"className": "main"}],
-					["tree", "ref", "tree"],
-					["history", "ref", "history"],
+					["models", "refs", "models"],
+					["Github", "ref", "Github"],
 					["Shortcut", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
@@ -69,6 +72,8 @@
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
 						["models", "ref", "tree"],
+						["Github", "ref", "Github"],
+						["repoMeta", "ref", "repoMeta"],
 						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
 							["tpl", "file", "ListItem.asp"],

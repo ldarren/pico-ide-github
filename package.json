@@ -1,6 +1,6 @@
 {
   "name": "pico-ide",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "pico ide",
   "main": "index.js",
   "scripts": {

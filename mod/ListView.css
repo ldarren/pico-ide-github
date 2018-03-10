@@ -2,7 +2,13 @@ ul.listView{
 	list-style-type: none;	
 }
 ul.listView .listItem{
+	background: white;
+	color: blue;
 	padding: 10px;
 	text-align: center;
 	cursor: pointer;
+}
+ul.listView .listItem.selected{
+	background: blue;
+	color: white;
 }

@@ -1,4 +1,5 @@
 return {
+	signals: ['selected'],
 	deps:{
 		models: 'models',
 		repoMeta: 'models',
@@ -14,6 +15,11 @@ return {
 				this.addItem(m.id)
 			}
 		})
+	},
+	slots: {
+		'select': function(from, sender){
+			this.signals.selected(sender).send([this.host, this, sender])
+		}
 	},
 	addItem: function(id, spec){
 		this.spawn(this.deps.ListItem, [id], spec)
