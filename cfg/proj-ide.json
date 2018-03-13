@@ -13,7 +13,6 @@
 			["options", "map", {"className": "recreation", "draggable": "false"}],
 			["html", "file", "Recreation.html"],
 			["models", "refs", "models"],
-			["Github", "ref", "Github"],
 			["HeaderBar", "view", [
 				["options", "map", {"className": "headerBar"}],
 				["html", "file", "HeaderBar.html"],
@@ -23,7 +22,6 @@
 				["options", "map", {"className": "container"}],
 				["css", "file", "Container.css"],
 				["models", "refs", "models"],
-				["Github", "ref", "Github"],
 				["Project", "view", [
 					["options", "map", {"className": "main"}],
 					["models", "refs", "models"],
@@ -49,7 +47,6 @@
 				["Explorer", "view", [
 					["options", "map", {"className": "main"}],
 					["models", "refs", "models"],
-					["Github", "ref", "Github"],
 					["Shortcut", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
@@ -72,7 +69,6 @@
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
 						["models", "ref", "tree"],
-						["Github", "ref", "Github"],
 						["repoMeta", "ref", "repoMeta"],
 						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
