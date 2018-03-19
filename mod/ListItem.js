@@ -1,5 +1,5 @@
 return {
-	signals: ['select'],
+	signals: ['select', 'open'],
 	deps:{
 		model: 'model',
 		tpl: 'file'
@@ -21,8 +21,11 @@ return {
 		}
 	},
 	events: {
-		'click li': function(evt, target){
+		'tap li': function(evt, target){
 			this.selected()
+		},
+		'taps li': function(evt, target){
+			this.signals.open(this.deps.model).send(this.host)
 		}
 	}
 }

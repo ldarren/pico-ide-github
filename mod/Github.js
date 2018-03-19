@@ -45,6 +45,7 @@ function ajax(){
 	__.ajax(method, url, body, options, (err, state, res) => {
 		if (4 !== state) return
 		if (err) return cb(err, res)
+		if (options && options.raw) return cb(null, res)
 		try { var json = JSON.parse(res) }
 		catch(exp) { return cb(exp) }
 		cb(null, json)
@@ -96,7 +97,12 @@ return {
 	slots: {
 		'github.getRaw': function(from, sender, repoId, path, cb){
 			var repo = this.deps.repos.get(repoId)
-			ajax('http://dev.biclicious.biz:8080/repos/get/raw/' + `${repo.full_name}/${path}`, cb)
+			ajax(
+				'GET',
+				'http://dev.biclicious.biz:8080/repos/get/raw/' + `${repo.full_name}/contents${path}`,
+				null,
+				{raw: true},
+				cb)
 		},
 		'github.getContent': function(from, sender, repoId, path, cb){
 			var repo = this.deps.repos.get(repoId)

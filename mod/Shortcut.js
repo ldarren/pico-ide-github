@@ -13,7 +13,7 @@ return {
 		'click .listItem': function(evt, target){
 			switch(target.querySelector('a').name){
 			case 'browse':
-				this.signals.browse('/').send(this.host)
+				this.signals.browse('').send(this.host)
 				break
 			case 'create':
 				this.signals.create().send(this.host)

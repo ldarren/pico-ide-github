@@ -10,11 +10,11 @@ return {
 	slots: {
 		'browse': function(from, sender, path){
 			this.clear()
-			this.spawn(this.deps.TreeView, ['/'])
+			this.spawn(this.deps.TreeView, [path])
 		},
 		'edit': function(from, sender, url){
 			this.clear()
-			this.spawn(this.deps.TextEditor)
+			this.spawn(this.deps.TextEditor, [url])
 		},
 		'close': function(from, sender){
 			this.clear()

@@ -4,7 +4,9 @@
 		["css", "file", "Playground.css"],
 		["repos", "models", []],
 		["repoMeta", "models", []],
-		["tree", "models", []],
+		["tree", "models", [
+			["options", "map", {"idAttr":"sha"}]
+		]],
 		["history", "models", []],
 		["Github", "ctrl", [
 			["repos", "ref", "repos"]
@@ -68,17 +70,20 @@
 					["TreeView", "view", [
 						["options", "map", {"tagName":"ul", "className": "listView"}],
 						["css", "file", "ListView.css"],
-						["models", "ref", "tree"],
+						["models", "models", [
+							["options", "map", {"idAttr":"sha"}]
+						]],
+						["tree", "ref", "tree"],
 						["repoMeta", "ref", "repoMeta"],
 						["ListItem", "view", [
 							["options", "map", {"tagName":"li", "className": "listItem"}],
-							["tpl", "file", "ListItem.asp"],
+							["tpl", "file", "FileItem.asp"],
 							["model", "model", "models", 0]
 						]]
 					], ["ListView", "TreeView"]],
 					["TextEditor", "view", [
 						["options", "map", {"tagName":"textarea"}],
-						["fileurl", "text", ""]
+						["repoMeta", "ref", "repoMeta"]
 					]]
 				]],
 				["Preview", "view", [
