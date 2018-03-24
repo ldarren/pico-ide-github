@@ -1,6 +1,6 @@
 {
   "name": "pico-ide",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "pico ide",
   "main": "index.js",
   "scripts": {
@@ -15,11 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "clean-css": "^4.1.11",
-    "codemirror": "^5.35.0",
-    "lean-wrap": "^0.2.23",
-    "pico-args": "^1.0.9",
-    "pico-client": "^0.3.22",
-    "pico-common": "^0.8.8",
-    "pojs": "^0.5.1"
+    "codemirror": "^5.36.0",
+    "lean-wrap": "*",
+    "pico-args": "*",
+    "pico-client": "*",
+    "pico-common": "^0.9.0",
+    "pojs": "*"
   }
 }

@@ -2,7 +2,6 @@ return {
 	signals: ['selected'],
 	deps:{
 		models: 'models',
-		repoMeta: 'models',
 		ListItem: 'view'
 	},
 	create: function(deps, params){
