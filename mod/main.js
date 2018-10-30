@@ -19,7 +19,7 @@ pico.run({
 },function(){
     var specMgr= require('p/specMgr')
     var View= require('p/View')
-    var project = require('cfg/proj.json')
+    var project = require('cfg/' + pico.env('dataset').cfg + '.json')
 	var view
 
     return function(){

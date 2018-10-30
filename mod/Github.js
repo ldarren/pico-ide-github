@@ -95,6 +95,7 @@ return {
 		})
 	},
 	slots: {
+		// with correct content-type
 		'github.getRaw': function(from, sender, repoId, path, cb){
 			var repo = this.deps.repos.get(repoId)
 			ajax(
@@ -104,6 +105,7 @@ return {
 				{raw: true},
 				cb)
 		},
+		// content-type=plain/text, direct to github
 		'github.getContent': function(from, sender, repoId, path, cb){
 			var repo = this.deps.repos.get(repoId)
 			ajax('GET', domain + `repos/${repo.full_name}/contents/${path}`, oauth, {
@@ -111,6 +113,16 @@ return {
 					Accept: 'application/vnd.github.VERSION.raw'
 				}
 			}, cb)
+		},
+		// git operations
+		'github.git': function(from, sender, repoId, method, path, cb){
+			var repo = this.deps.repos.get(repoId)
+			ajax(
+				method,
+				'http://dev.biclicious.biz:8080/repos/'+method+'/git/' + `${repo.full_name}/git${path}`,
+				null,
+				{raw: true},
+				cb)
 		}
 	}
 }

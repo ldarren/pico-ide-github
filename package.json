@@ -1,6 +1,6 @@
 {
   "name": "pico-ide",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "pico ide",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
   "author": "Darren Liew",
   "license": "MIT",
   "dependencies": {
-    "clean-css": "^4.1.11",
-    "codemirror": "^5.36.0",
+    "clean-css": "*",
+    "codemirror": "*",
     "lean-wrap": "*",
     "pico-args": "*",
     "pico-client": "*",
-    "pico-common": "^0.9.0",
+    "pico-common": "*",
     "pojs": "*"
   }
 }

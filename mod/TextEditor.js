@@ -1,5 +1,5 @@
 return {
-	signals: ['github.getRaw'],
+	signals: ['github.getRaw', 'github.postCommit'],
 	deps: {
 		repoMeta: 'models'
 	},
@@ -12,9 +12,11 @@ return {
 
 		this.signals['github.getRaw'](selected.id, dirname, (err, raw) => {
 			this.el.value = raw
-			this.editor = CodeMirror.fromTextArea(this.el, {
+			CodeMirror.fromTextArea(this.el, {
 				lineNumbers: true,
 				mode: 'javascript'
+			}).on('Alt-S', (instance, key, evt) => {
+				this.signals['github.postCommit'](selected.id, dirname, instance.getValue()).send(this.host)
 			})
 		}).send(this.host)
 	}
