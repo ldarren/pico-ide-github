@@ -1,5 +1,5 @@
-# pico-ide
-a pico size IDE
+# pico-ide-github
+a pico size IDE with slack and github integration
 
 ## purpose
 - edit pico projects (client and api) with ease
